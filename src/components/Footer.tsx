@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { MessageSquare } from 'lucide-react';
 import { PrivacyModal } from './PrivacyModal';
 
 interface FooterProps {
@@ -12,10 +11,11 @@ const WHATSAPP_URL = 'https://wa.me/923064330657?text=Hi%20Mr.%20Ali%2C%20I%20ha
 
 export function Footer({ onNavigateServices, onNavigateCybersecurity, onNavigateContact }: FooterProps) {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+
   return (
     <>
       <footer className="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-[#0A0E14]">
-                <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-6 px-4 py-10 text-center text-sm text-slate-600 dark:text-slate-400 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-6 px-4 py-10 text-center text-sm text-slate-600 dark:text-slate-400 sm:px-6">
           
           <p className="font-medium leading-relaxed text-slate-800 dark:text-slate-200">
             Built for EMR vendors and independent practices.
@@ -109,29 +109,6 @@ export function Footer({ onNavigateServices, onNavigateCybersecurity, onNavigate
             <a
               href="/contact"
               onClick={(e) => { e.preventDefault(); onNavigateContact(); }}
-              className="underline underline-offset-4 hover:text-[#0F766E] dark:hover:text-[#39FF14] cursor-pointer"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-            <a
-              href="/services"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigateServices();
-              }}
-              className="underline underline-offset-4 hover:text-[#0F766E] dark:hover:text-[#39FF14] cursor-pointer"
-            >
-              Staffing Site
-            </a>
-            <span>|</span>
-            <a
-              href="/contact"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigateContact();
-              }}
               className="underline underline-offset-4 hover:text-[#0F766E] dark:hover:text-[#39FF14] cursor-pointer"
             >
               Contact
