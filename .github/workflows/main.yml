@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm install
+      - run: npm install --legacy-peer-deps
       - run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
