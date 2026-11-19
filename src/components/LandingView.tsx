@@ -1,7 +1,9 @@
 import React from 'react';
-import PainPointsSections from './PainPointsSections';
+// FIXED: Changed to default import (no curly braces) based on your error log
+import PainPointsSections from './PainPointsSections'; 
 
-export default function LandingView() {
+// FIXED: Changed to a named export for App.tsx
+export const LandingView = () => {
   return (
     <div className="landing-view-container">
       
@@ -25,9 +27,8 @@ export default function LandingView() {
 
 
       {/* ========================================== */}
-      {/* AUDIENCE CARDS START (For Practices / Vendors) */}
+      {/* AUDIENCE CARDS START */}
       {/* ========================================== */}
-      {/* Note: This imports your existing component, so make sure the text inside PainPointsSections.tsx is updated to match the copy below */}
       <section id="audiences" className="audience-section">
         <PainPointsSections />
       </section>
@@ -50,16 +51,16 @@ export default function LandingView() {
       {/* ========================================== */}
       <section id="how-it-works" className="how-it-works-section" style={{ padding: '4rem 2rem', textAlign: 'center' }}>
         <h2>How It Works</h2>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '2rem' }}>
-          <div>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '2rem', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1', minWidth: '200px' }}>
             <h4>Step 1</h4>
             <p>Answer a few quick questions.</p>
           </div>
-          <div>
+          <div style={{ flex: '1', minWidth: '200px' }}>
             <h4>Step 2</h4>
             <p>Get a clear map of your revenue leaks and workflow gaps.</p>
           </div>
-          <div>
+          <div style={{ flex: '1', minWidth: '200px' }}>
             <h4>Step 3</h4>
             <p>Talk to our team — one click away, hours saved.</p>
           </div>
@@ -85,4 +86,4 @@ export default function LandingView() {
 
     </div>
   );
-}
+};
