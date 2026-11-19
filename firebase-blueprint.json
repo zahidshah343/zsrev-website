@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "Voluntary email capture recorded when a user sends their diagnostic report PDF via email. Contains no PHI or diagnostic answers.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "minLength": 5,
+          "maxLength": 254,
+          "description": "Recipient email voluntarily provided by the user to receive their PDF report."
+        },
+        "report_id": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 64,
+          "pattern": "^#?[a-zA-Z0-9_\\-]+$",
+          "description": "Generated diagnostic report identifier."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp recorded when the report email was sent."
+        }
+      },
+      "required": ["email", "report_id", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": {
+        "$ref": "#/entities/Lead"
+      },
+      "description": "Stores voluntary report delivery leads (timestamp, email, report_id) with zero PHI or diagnostic answers."
+    }
+  }
+}

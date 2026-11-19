@@ -1,0 +1,47 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global safety net: deny all reads and writes by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isValidLead(data) {
+      return data.keys().hasAll(['email', 'report_id', 'timestamp'])
+        && data.keys().hasOnly(['email', 'report_id', 'timestamp'])
+        && data.email is string
+        && data.email.size() >= 5
+        && data.email.size() <= 254
+        && data.email.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$')
+        && data.report_id is string
+        && data.report_id.size() >= 3
+        && data.report_id.size() <= 64
+        && data.report_id.matches('^#?[a-zA-Z0-9_\\-]+$')
+        && data.timestamp == request.time;
+    }
+
+    // Voluntary email lead capture: verified users may create only strict non-PHI lead records.
+    // Client reads, updates, and deletes are blocked to prevent PII exposure.
+    match /leads/{leadId} {
+      allow get, list, update, delete: if false;
+      allow create: if isVerifiedUser() && isValidId(leadId) && isValidLead(incoming());
+    }
+  }
+}

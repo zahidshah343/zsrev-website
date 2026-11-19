@@ -1,0 +1,6 @@
+{
+  "name": "EMR Pulse",
+  "description": "A vendor-neutral diagnostic and partner-matching tool for EMR, Practice Management, RCM, and full-suite EHR users.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

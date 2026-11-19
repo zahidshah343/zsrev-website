@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /free-tools
+Allow: /about
+Allow: /diagnostic
+Disallow: /report
+Disallow: /api/
+
+Sitemap: https://ais-pre-ai5sdcvb2arvttcn7eysq7-454289187961.asia-northeast1.run.app/sitemap.xml
