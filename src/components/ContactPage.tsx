@@ -40,7 +40,7 @@ export function ContactPage({ onStartDiagnostic }: ContactPageProps) {
           </div>
 
           <h1 className="mt-5 font-display text-[clamp(2.25rem,4vw,3.5rem)] font-extrabold leading-[1.12] tracking-tight text-white text-balance">
-            Get in touch with Mr. Ali
+           Get in touch with the ZSREV team
           </h1>
 
           <p className="mt-4 max-w-2xl mx-auto text-base leading-relaxed text-slate-300 sm:text-lg">
@@ -67,7 +67,7 @@ export function ContactPage({ onStartDiagnostic }: ContactPageProps) {
                 </div>
               </div>
               <p className="mt-4 text-sm text-slate-300 leading-relaxed">
-                Connect instantly with Mr. Ali via WhatsApp for direct operational inquiries and urgent questions.
+                Connect instantly with the ZSREV team via WhatsApp for direct operational inquiries and urgent questions
               </p>
             </div>
             <div className="mt-6">
@@ -79,7 +79,7 @@ export function ContactPage({ onStartDiagnostic }: ContactPageProps) {
                 className="inline-flex w-full min-h-[46px] items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-sm font-bold text-slate-950 transition-colors hover:bg-[#20ba5a] shadow-md cursor-pointer"
               >
                 <MessageSquare className="h-4 w-4 shrink-0" aria-hidden="true" />
-                <span>Chat with Mr. Ali on WhatsApp</span>
+                <span>Chat with the team on WhatsApp</span>
               </a>
             </div>
           </div>
