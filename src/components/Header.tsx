@@ -76,7 +76,7 @@ export function Header({
               ZSREV
             </span>
             <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">
-              A ZSREV Company
+              Clarity. Security. Revenue.
             </span>
           </div>
         </button>
