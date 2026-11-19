@@ -1,7 +1,6 @@
 import React from 'react';
 // FIXED: Changed to default import (no curly braces) based on your error log
-import PainPointsSections from './PainPointsSections'; 
-
+{import { PainPointsSections } from './PainPointsSections';}
 // FIXED: Changed to a named export for App.tsx
 export const LandingView = () => {
   return (
