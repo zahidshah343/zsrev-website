@@ -1,7 +1,7 @@
 import React from 'react';
 import { PainPointsSections } from './PainPointsSections';
 
-export const LandingView = () => {}}>
+export const LandingView = () => {}>
         <h2>About ZSREV</h2>
         <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
           The EMR and RCM world runs on misaligned incentives. Practices book demos that never happen. Vendors spend heavily on G2 and Capterra and still get appointments that produce zero results.
