@@ -1,15 +1,7 @@
 import React from 'react';
-// FIXED: Changed to default import (no curly braces) based on your error log
-{import { PainPointsSections } from './PainPointsSections';}
-// FIXED: Changed to a named export for App.tsx
-export const LandingView = () => {
-  return (
-    <div className="landing-view-container">
-      
-      {/* ========================================== */}
-      {/* ABOUT INTRO START */}
-      {/* ========================================== */}
-      <section id="about" className="about-intro-section" style={{ padding: '4rem 2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+import { PainPointsSections } from './PainPointsSections';
+
+export const LandingView = () => {}}>
         <h2>About ZSREV</h2>
         <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
           The EMR and RCM world runs on misaligned incentives. Practices book demos that never happen. Vendors spend heavily on G2 and Capterra and still get appointments that produce zero results.
